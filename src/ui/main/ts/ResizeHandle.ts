@@ -54,7 +54,7 @@ export default Widget.extend({
 
     self._super();
 
-    self.resizeDragHelper = new DragHelper(this._id, {
+    self.resizeDragHelper = new DragHelper(self.getEl(), {
       start () {
         self.fire('ResizeStart');
       },

@@ -70,7 +70,8 @@ export default function (id, settings) {
   settings = settings || {};
 
   function getHandleElm() {
-    return doc.getElementById(settings.handle || id);
+    const localId = settings.handle || id;
+    return typeof localId === 'object' ? localId : doc.getElementById(localId);
   }
 
   start = function (e) {
